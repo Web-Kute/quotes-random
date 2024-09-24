@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v20.0"></script>
+  <header>
+    <nav role="navigation" aria-label="Menu principal">
+      <form action="#" method="POST">
+        <fieldset>
+          <label for="category">Category </label>
+          <select name="category" id="category" class="select">
+            <option value="">Choose a category</option>
+          </select>
+          <button type="submit" aria-label="Pick another one" id="submit">Pick another quote</button>
+          <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout=""
+            data-size=""><a target="_blank"
+              href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+              class="fb-xfbml-parse-ignore">Share on FaceBook</a></div>
+        </fieldset>
+      </form>
+    </nav>
+  </header>
+  <main>
+    <figure class="quote">
+      <blockquote>
+        But web browsers aren’t like web servers. If your back-end code is getting so big that it’s starting to run
+        noticably slowly, you can throw more computing power at it by scaling up your server. That’s not an option on
+        the front-end where you don’t really have one run-time environment—your end users have their own run-time
+        environment with its own constraints around computing power and network connectivity.
+      </blockquote>
+      <figcaption>
+        &mdash; Jeremy Keith, <cite>Mental models</cite>
+      </figcaption>
+    </figure>
+  </main>
+  <footer>
+
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+
+$breakpoints: (
+  mobile-only: 599px,
+  tablet-portrait-up: 600px,
+  tablet-portrait-down: 899px,
+  tablet-landscape-up: 900px,
+  tablet-landscape-down: 1199px,
+  desktop-up: 1200px,
+  desktop-down: 1799px,
+  big-desktop-up: 1800px
+);
+
+@mixin mobile-only {
+  @media (max-width: map-get($breakpoints, "mobile-only")) {
+    @content;
+  }
+}
+@mixin tablet-portrait-up {
+  @media (min-width: map-get($breakpoints, "tablet-portrait-up")) {
+    @content;
+  }
+}
+@mixin tablet-portrait-down {
+  @media (max-width: map-get($breakpoints, "tablet-portrait-down")) {
+    @content;
+  }
+}
+@mixin tablet-portrait-only {
+  @media (min-width: map-get($breakpoints, "tablet-portrait-up")) and (max-width: map-get($breakpoints, "tablet-portrait-down")) {
+    @content;
+  }
+}
+@mixin tablet-landscape-up {
+  @media (min-width: map-get($breakpoints, "tablet-landscape-up")) {
+    @content;
+  }
+}
+@mixin tablet-landscape-only {
+  @media (min-width: map-get($breakpoints, "tablet-landscape-up")) and (max-width: map-get($breakpoints, "tablet-landscape-down")) {
+    @content;
+  }
+}
+@mixin desktop-up {
+  @media (min-width: map-get($breakpoints, "desktop-up")) {
+    @content;
+  }
+}
+@mixin desktop-only {
+  @media (min-width: map-get($breakpoints, "desktop-up")) and (max-width: map-get($breakpoints, "desktop-down")) {
+    @content;
+  }
+}
+@mixin big-desktop-up {
+  @media (min-width: map-get($breakpoints, "big-desktop-up")) {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+$colors: (
+  "white": hsl(0, 0%, 100%),
+  "clouds": hsl(192, 15%, 94%),
+  "silver": hsl(204, 8%, 76%),
+  "concrete": hsl(184, 9%, 62%),
+  "asbestos": hsl(184, 6%, 53%),
+  "wet-asphalt": hsl(210, 29%, 29%),
+  "midnight-blue": hsl(210, 29%, 24%),
+  "black-pearl": hsl(206, 21%, 15%),
+  "turquoise": hsl(168, 76%, 42%),
+  "emerald": hsl(145, 63%, 49%),
+  "peter-river": hsl(204, 70%, 53%),
+  "amethyst": hsl(283, 39%, 53%),
+  "green-sea": hsl(168, 76%, 36%),
+  "nephritis": hsl(145, 63%, 42%),
+  "belize-hole": hsl(204, 64%, 44%),
+  "wisteria": hsl(282, 44%, 47%),
+  "sun-flower": hsl(48, 89%, 50%),
+  "carrot": hsl(28, 80%, 52%),
+  "alzarin": hsl(6, 78%, 57%),
+  "orange": hsl(37, 90%, 51%),
+  "pumpkin": hsl(24, 100%, 41%),
+  "pomegranate": hsl(6, 63%, 46%),
+  "logocolor": hsl(358, 70%, 52%),
+  "complement-logocolor": hsl(178, 70%, 52%)
+);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 1px dotted currentColor;
+  outline-offset: 3px;
+}
+
+// Reset original HTML button
+button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background-color: transparent;
+  outline: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: roboto;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+  margin-bottom: 25px;
+  background-color: map-get($colors, "green-sea");
+}
+
+form {
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.3rem;
+    font-size: 1.2rem;
+    color: map-get($colors, "white");
+  }
+  .select {
+    background-color: map-get($colors, "white");
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    font-size: 0.9rem;
+    width: 17rem;
+    height: 2.8rem;
+    color: map-get($colors, "black-pearl");
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid map-get($colors, "silver");
+  }
+  button {
+    width: 150px;
+    padding: 7px;
+    border-radius: 7px;
+    background-color: map-get($colors, "sun-flower");
+    box-shadow: 1px 1px 2px map-get($colors, "clouds");
+    color: map-get($colors, "black-pearl");
+    transition-duration: 300ms;
+    &:hover {
+      color: map-get($colors, "white");
+      background-color: map-get($colors, "midnight-blue");
+    }
+  }
+}
+
+figure {
+  width: 550px;
+  @include tablet-portrait-down() {
+    width: 350px;
+  }
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Roboto Slab", serif;
+  blockquote {
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.5rem, 1.3337rem + 0.4442vw, 2rem);
+    margin-bottom: 1rem;
+  }
+  figcaption {
+    font-size: clamp(1rem, 0.8337rem + 0.4442vw, 1.5rem);
+    font-style: italic;
+  }
+}
+
+main {
+  margin: 1rem 0 2rem;
+}
