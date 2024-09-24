@@ -70,6 +70,7 @@ form button:hover {
 }
 
 figure {
+  position: relative;
   width: 550px;
   margin-left: auto;
   margin-right: auto;
@@ -89,6 +90,15 @@ figure blockquote {
 figure figcaption {
   font-size: clamp(1rem, 0.8337rem + 0.4442vw, 1.5rem);
   font-style: italic;
+}
+
+.caty {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: hsl(184, 9%, 62%);
 }
 
 main {
