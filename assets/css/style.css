@@ -57,6 +57,7 @@ form fieldset {
   row-gap: 0.3rem;
   font-size: 1.2rem;
   color: hsl(0, 0%, 100%);
+  border: none;
 }
 form .select {
   background-color: hsl(0, 0%, 100%);
