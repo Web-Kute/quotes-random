@@ -1,5 +1,5 @@
-import { auth, options } from "./authen.js";
-import { categoryList } from "./category.js";
+import { auth, options } from './authen.js';
+import { categoryList } from './category.js';
 
 async function fetchApiQuotes(category) {
   const response = await fetch(`${auth.url}?category=${category}`, options);
@@ -16,12 +16,14 @@ async function fetchApiQuotes(category) {
 const selectCategory = document.getElementById('category');
 const quotesDom = document.querySelector('blockquote');
 const authorDom = document.querySelector('figcaption');
+const catDom = document.querySelector('.caty');
 const submit = document.getElementById('submit');
 
 async function quotesApi() {
   const quotes = await fetchApiQuotes(selectCategory.value);
   quotesDom.innerText = quotes[0].quote;
   authorDom.innerHTML = `&mdash; ${quotes[0].author}`;
+  catDom.innerText = `${quotes[0].category}`;
 }
 
 quotesApi();
