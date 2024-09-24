@@ -7,27 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="assets/css/style.min.css">
-  <title>Quotes Random</title>
+  <title>Document</title>
 </head>
 
 <body>
-  <div id="fb-root"></div>
-  <script async defer crossorigin="anonymous"
-    src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v20.0"></script>
   <header>
-    <nav role="navigation" aria-label="Menu principal">
+    <nav aria-label="List of categories">
       <form action="#" method="POST">
         <fieldset>
-          <label for="category">Category </label>
-          <select name="category" id="category" class="select">
-            <option value="">Choose a category</option>
-          </select>
-          <button type="submit" aria-label="Pick another one" id="submit">Pick another quote</button>
-          <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout=""
-            data-size=""><a target="_blank"
-              href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
-              class="fb-xfbml-parse-ignore">Share on FaceBook</a></div>
+          <div>
+            <label for="category"></label>
+            <select name="category" id="category" class="select">
+              <option value="">Choose a category</option>
+            </select>
+          </div>
+          <button data-text="More Quotes" type="submit" aria-label="Show another quote" id="submit"
+            class="tooltip right">"</button>
         </fieldset>
       </form>
     </nav>
@@ -45,10 +40,6 @@
       </figcaption>
     </figure>
   </main>
-  <footer>
-
-  </footer>
-  <script type="module" async defer src="assets/js/main.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap");
 
 $breakpoints: (
   mobile-only: 599px,
@@ -10,51 +11,51 @@ $breakpoints: (
   tablet-landscape-down: 1199px,
   desktop-up: 1200px,
   desktop-down: 1799px,
-  big-desktop-up: 1800px,
+  big-desktop-up: 1800px
 );
 
 @mixin mobile-only {
-  @media (max-width: map-get($breakpoints, 'mobile-only')) {
+  @media (max-width: map-get($breakpoints, "mobile-only")) {
     @content;
   }
 }
 @mixin tablet-portrait-up {
-  @media (min-width: map-get($breakpoints, 'tablet-portrait-up')) {
+  @media (min-width: map-get($breakpoints, "tablet-portrait-up")) {
     @content;
   }
 }
 @mixin tablet-portrait-down {
-  @media (max-width: map-get($breakpoints, 'tablet-portrait-down')) {
+  @media (max-width: map-get($breakpoints, "tablet-portrait-down")) {
     @content;
   }
 }
 @mixin tablet-portrait-only {
-  @media (min-width: map-get($breakpoints, 'tablet-portrait-up')) and (max-width: map-get($breakpoints, 'tablet-portrait-down')) {
+  @media (min-width: map-get($breakpoints, "tablet-portrait-up")) and (max-width: map-get($breakpoints, "tablet-portrait-down")) {
     @content;
   }
 }
 @mixin tablet-landscape-up {
-  @media (min-width: map-get($breakpoints, 'tablet-landscape-up')) {
+  @media (min-width: map-get($breakpoints, "tablet-landscape-up")) {
     @content;
   }
 }
 @mixin tablet-landscape-only {
-  @media (min-width: map-get($breakpoints, 'tablet-landscape-up')) and (max-width: map-get($breakpoints, 'tablet-landscape-down')) {
+  @media (min-width: map-get($breakpoints, "tablet-landscape-up")) and (max-width: map-get($breakpoints, "tablet-landscape-down")) {
     @content;
   }
 }
 @mixin desktop-up {
-  @media (min-width: map-get($breakpoints, 'desktop-up')) {
+  @media (min-width: map-get($breakpoints, "desktop-up")) {
     @content;
   }
 }
 @mixin desktop-only {
-  @media (min-width: map-get($breakpoints, 'desktop-up')) and (max-width: map-get($breakpoints, 'desktop-down')) {
+  @media (min-width: map-get($breakpoints, "desktop-up")) and (max-width: map-get($breakpoints, "desktop-down")) {
     @content;
   }
 }
 @mixin big-desktop-up {
-  @media (min-width: map-get($breakpoints, 'big-desktop-up')) {
+  @media (min-width: map-get($breakpoints, "big-desktop-up")) {
     @content;
   }
 }
@@ -66,30 +67,30 @@ $breakpoints: (
 }
 
 $colors: (
-  'white': hsl(0, 0%, 100%),
-  'clouds': hsl(192, 15%, 94%),
-  'silver': hsl(204, 8%, 76%),
-  'concrete': hsl(184, 9%, 62%),
-  'asbestos': hsl(184, 6%, 53%),
-  'wet-asphalt': hsl(210, 29%, 29%),
-  'midnight-blue': hsl(210, 29%, 24%),
-  'black-pearl': hsl(206, 21%, 15%),
-  'turquoise': hsl(168, 76%, 42%),
-  'emerald': hsl(145, 63%, 49%),
-  'peter-river': hsl(204, 70%, 53%),
-  'amethyst': hsl(283, 39%, 53%),
-  'green-sea': hsl(168, 76%, 36%),
-  'nephritis': hsl(145, 63%, 42%),
-  'belize-hole': hsl(204, 64%, 44%),
-  'wisteria': hsl(282, 44%, 47%),
-  'sun-flower': hsl(48, 89%, 50%),
-  'carrot': hsl(28, 80%, 52%),
-  'alzarin': hsl(6, 78%, 57%),
-  'orange': hsl(37, 90%, 51%),
-  'pumpkin': hsl(24, 100%, 41%),
-  'pomegranate': hsl(6, 63%, 46%),
-  'logocolor': hsl(358, 70%, 52%),
-  'complement-logocolor': hsl(178, 70%, 52%),
+  "white": hsl(0, 0%, 100%),
+  "clouds": hsl(192, 15%, 94%),
+  "silver": hsl(204, 8%, 76%),
+  "concrete": hsl(184, 9%, 62%),
+  "asbestos": hsl(184, 6%, 53%),
+  "wet-asphalt": hsl(210, 29%, 29%),
+  "midnight-blue": hsl(210, 29%, 24%),
+  "black-pearl": hsl(206, 21%, 15%),
+  "turquoise": hsl(168, 76%, 42%),
+  "emerald": hsl(145, 63%, 49%),
+  "peter-river": hsl(204, 70%, 53%),
+  "amethyst": hsl(283, 39%, 53%),
+  "green-sea": hsl(168, 76%, 36%),
+  "nephritis": hsl(145, 63%, 42%),
+  "belize-hole": hsl(204, 64%, 44%),
+  "wisteria": hsl(282, 44%, 47%),
+  "sun-flower": hsl(48, 89%, 50%),
+  "carrot": hsl(28, 80%, 52%),
+  "alzarin": hsl(6, 78%, 57%),
+  "orange": hsl(37, 90%, 51%),
+  "pumpkin": hsl(24, 100%, 41%),
+  "pomegranate": hsl(6, 63%, 46%),
+  "logocolor": hsl(358, 70%, 52%),
+  "complement-logocolor": hsl(178, 70%, 52%)
 );
 
 *,
@@ -131,44 +132,48 @@ header {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 150px;
   margin-bottom: 25px;
-  background-color: map-get($colors, 'green-sea');
+  background-color: map-get($colors, "green-sea");
+  padding: 20px;
 }
 
 form {
   fieldset {
     display: flex;
-    flex-direction: column;
-    row-gap: 0.3rem;
+    // flex-direction: column;
+    column-gap: 1rem;
     font-size: 1.2rem;
-    color: map-get($colors, 'white');
+    color: map-get($colors, "white");
     border: none;
   }
   .select {
-    background-color: map-get($colors, 'white');
+    background-color: map-get($colors, "white");
     cursor: pointer;
     display: inline-block;
     position: relative;
     font-size: 0.9rem;
     width: 17rem;
     height: 2.8rem;
-    color: map-get($colors, 'black-pearl');
+    color: map-get($colors, "black-pearl");
     padding: 12px;
     border-radius: 5px;
-    border: 1px solid map-get($colors, 'silver');
+    border: 1px solid map-get($colors, "silver");
   }
   button {
-    width: 150px;
+    font-family: "Passion One";
+    width: 50px;
+    height: 42px;
     padding: 7px;
+    font-size: 40px;
     border-radius: 7px;
-    background-color: map-get($colors, 'sun-flower');
-    box-shadow: 1px 1px 2px map-get($colors, 'clouds');
-    color: map-get($colors, 'black-pearl');
+    background-color: map-get($colors, "sun-flower");
+    box-shadow: 1px 1px 2px map-get($colors, "clouds");
+    color: map-get($colors, "black-pearl");
     transition-duration: 300ms;
+    position: relative;
     &:hover {
-      color: map-get($colors, 'white');
-      background-color: map-get($colors, 'midnight-blue');
+      color: map-get($colors, "white");
+      background-color: map-get($colors, "midnight-blue");
     }
   }
 }
@@ -180,7 +185,7 @@ figure {
   }
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   blockquote {
     font-style: italic;
     font-weight: 300;
@@ -195,4 +200,55 @@ figure {
 
 main {
   margin: 1rem 0 2rem;
+}
+
+.tooltip {
+  position: relative; /* making the .tooltip span a container for the tooltip text */
+  transition-duration: 300ms; /* little indicater to indicate it's hoverable */
+  &:before {
+    content: attr(data-text); /* here's the magic */
+    position: absolute;
+    font-size: 1rem;
+    font-family: Roboto;
+    /* vertically center */
+    top: 50%;
+    transform: translateY(-50%);
+
+    /* move to right */
+    left: 100%;
+    margin-left: 15px; /* and add a small left margin */
+
+    /* basic styles */
+    width: 160px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: map-get($colors, "midnight-blue");
+    color: map-get($colors, "white");
+    text-align: center;
+    display: none; /* hide by default */
+  }
+  &::after {
+    content: "";
+    // content: open-quote;
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    // Triangle right to left
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid map-get($colors, "midnight-blue");
+    display: none;
+  }
+  &:hover::before,
+  &:hover::after {
+    display: block;
+  }
+
+  &.left:before {
+    /* set new values */
+    right: 100%;
+    margin-right: 15px;
+  }
 }
