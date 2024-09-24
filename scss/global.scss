@@ -85,15 +85,14 @@ figure {
     font-size: clamp(1rem, 0.8337rem + 0.4442vw, 1.5rem);
     font-style: italic;
   }
-}
-
-.caty {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  text-transform: uppercase;
-  font-size: 1rem;
-  color: map-get(variables.$colors, 'concrete');
+  .caty {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: map-get(variables.$colors, 'concrete');
+  }
 }
 
 main {
