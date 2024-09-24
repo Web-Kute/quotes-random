@@ -1,30 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap");
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 a:focus-visible,
 input:focus-visible,
 select:focus-visible {
   outline: 1px dotted currentColor;
   outline-offset: 3px;
-}
-
-button {
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  border: none;
-  background-color: transparent;
-  outline: 0;
-  padding: 0;
-  cursor: pointer;
 }
 
 body {
@@ -157,4 +138,4 @@ main {
   /* set new values */
   right: 100%;
   margin-right: 15px;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=global.css.map */
