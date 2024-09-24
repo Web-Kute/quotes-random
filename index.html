@@ -7,8 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="assets/css/style.min.css">
-  <link rel="stylesheet" href="assets/css/reset.min.css">
+  <link rel="stylesheet" href="./assets/css/style.min.css">
+  <link rel="stylesheet" href="./assets/css/reset.min.css">
+  <link rel="stylesheet" href="./assets/select/dist/css/nice-select2.css">
   <title>Quotes Random</title>
 </head>
 
@@ -17,9 +18,9 @@
     <nav aria-label="List of categories">
       <form action="#" method="POST">
         <fieldset>
-          <div>
+          <div class="box">
             <label for="category"></label>
-            <select name="category" id="category" class="select">
+            <select name="category" id="category" class="select selectize" multiple="multiple">
               <option value="">Choose a category</option>
             </select>
           </div>
@@ -43,7 +44,8 @@
       <cite class="caty"></cite>
     </figure>
   </main>
-  <script type="module" async defer src="assets/js/main.js"></script>
+  <script src="./assets/select/dist/js/nice-select2.js"></script>
+  <script type="module" async defer src="./assets/js/main.js"></script>
 </body>
 
 </html>
