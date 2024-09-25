@@ -22,7 +22,7 @@ const dropdown = document.querySelector('.dropdown-menu');
 
 async function quotesApi(e) {
   const quotes = await fetchApiQuotes(
-    (e.target.dataset.category = categoryList[catIndex]),
+    e.target.dataset.category || categoryList[catIndex],
   );
   console.log('quotes', quotes);
 
