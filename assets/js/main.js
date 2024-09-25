@@ -40,11 +40,11 @@ categoryList.forEach((cat) => {
 categoryList.forEach((item) => {
   const li = document.createElement('li');
   const link = document.createElement('a');
-  li.appendChild(link);
   link.href = '#';
   link.classList.add('dropdown-item');
   link.innerText = item;
   link.dataset.value = item;
+  li.appendChild(link);
   dropdown.appendChild(li);
 });
 
