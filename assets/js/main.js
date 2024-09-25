@@ -29,13 +29,13 @@ async function quotesApi() {
 
 quotesApi();
 
-categoryList.forEach((cat) => {
-  const option = document.createElement('option');
-  option.classList.add('quote-category');
-  option.value = cat;
-  option.text = cat;
-  selectCategory.appendChild(option);
-});
+// categoryList.forEach((cat) => {
+//   const option = document.createElement('option');
+//   option.classList.add('quote-category');
+//   option.value = cat;
+//   option.text = cat;
+//   selectCategory.appendChild(option);
+// });
 
 categoryList.forEach((item) => {
   const li = document.createElement('li');
@@ -56,8 +56,8 @@ dropdown.addEventListener('click', (e) => {
   quotesApi();
 });
 
-selectCategory.addEventListener('change', quotesApi);
-submit.addEventListener('click', (e) => {
-  e.preventDefault();
-  quotesApi();
-});
+// selectCategory.addEventListener('change', quotesApi);
+// submit.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   quotesApi();
+// });
