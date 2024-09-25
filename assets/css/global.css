@@ -102,6 +102,10 @@ figure .caty {
 
 main {
   margin: 1rem 0 2rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
 }
 
 .tooltip {
