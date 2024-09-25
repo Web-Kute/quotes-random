@@ -39,9 +39,12 @@ categoryList.forEach((cat) => {
 
 categoryList.forEach((item) => {
   const li = document.createElement('li');
-  li.classList.add('dropdown-item');
-  li.innerText = item;
-  li.value = item;
+  const link = document.createElement('a');
+  li.appendChild(link);
+  link.href = '#';
+  link.classList.add('dropdown-item');
+  link.innerText = item;
+  link.dataset.value = item;
   dropdown.appendChild(li);
 });
 
