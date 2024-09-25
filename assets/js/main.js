@@ -22,6 +22,8 @@ const dropdown = document.querySelector('.dropdown-menu');
 
 async function quotesApi() {
   const quotes = await fetchApiQuotes();
+console.log(quotes);
+
   quotesDom.innerText = quotes[0].quote;
   authorDom.innerHTML = `&mdash; ${quotes[0].author}`;
   catDom.innerText = `${quotes[0].category}`;
