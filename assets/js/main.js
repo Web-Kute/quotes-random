@@ -18,6 +18,7 @@ const quotesDom = document.querySelector('blockquote');
 const authorDom = document.querySelector('figcaption');
 const catDom = document.querySelector('.caty');
 const submit = document.getElementById('submit');
+const dropdown = document.querySelector('.dropdown-menu');
 
 async function quotesApi() {
   const quotes = await fetchApiQuotes(selectCategory.value);
@@ -34,6 +35,14 @@ categoryList.forEach((cat) => {
   option.value = cat;
   option.text = cat;
   selectCategory.appendChild(option);
+});
+
+categoryList.forEach((item) => {
+  const li = document.createElement('li');
+  li.classList.add('dropdown-item');
+  li.innerText = item;
+  li.value = item;
+  dropdown.appendChild(li);
 });
 
 selectCategory.addEventListener('change', quotesApi);
