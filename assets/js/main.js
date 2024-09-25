@@ -43,7 +43,6 @@ categoryList.forEach((item) => {
   link.href = '#';
   link.classList.add('dropdown-item');
   link.innerText = item;
-  link.dataset.value = item;
   li.appendChild(link);
   dropdown.appendChild(li);
 });
