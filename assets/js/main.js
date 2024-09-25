@@ -1,7 +1,7 @@
 import { auth, options } from './authen.js';
 import { categoryList } from './category.js';
 
-async function fetchApiQuotes(category) {
+async function fetchApiQuotes(category = categoryList[catIndex]) {
   const response = await fetch(`${auth.url}?category=${category}`, options);
 
   if (!response.ok) {
@@ -21,7 +21,7 @@ const catIndex = Math.floor(Math.random() * 66);
 const dropdown = document.querySelector('.dropdown-menu');
 
 async function quotesApi() {
-  const quotes = await fetchApiQuotes(categoryList[catIndex]);
+  const quotes = await fetchApiQuotes();
   quotesDom.innerText = quotes[0].quote;
   authorDom.innerHTML = `&mdash; ${quotes[0].author}`;
   catDom.innerText = `${quotes[0].category}`;
