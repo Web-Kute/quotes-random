@@ -13,15 +13,15 @@ async function fetchApiQuotes(category) {
   const data = await response.json();
   return data;
 }
-// const selectCategory = document.getElementById('category');
+
 const quotesDom = document.querySelector('blockquote');
 const authorDom = document.querySelector('figcaption');
 const catDom = document.querySelector('.caty');
   const catIndex = Math.floor(Math.random() * 66);
 const dropdown = document.querySelector('.dropdown-menu');
 
-async function quotesApi(categoryList[catIndex]) {
-  const quotes = await fetchApiQuotes();
+async function quotesApi() {
+  const quotes = await fetchApiQuotes((categoryList[catIndex]));
   console.log('quotes', quotes);
   quotesDom.innerText = quotes[0].quote;
   authorDom.innerHTML = `&mdash; ${quotes[0].author}`;
@@ -48,9 +48,3 @@ dropdown.addEventListener('click', (e) => {
   console.log('category', category);
   quotesApi(category);
 });
-
-// selectCategory.addEventListener('change', quotesApi);
-// submit.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   quotesApi();
-// });
