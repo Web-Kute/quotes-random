@@ -21,10 +21,11 @@ const catDom = document.querySelector('.caty');
 const dropdown = document.querySelector('.dropdown-menu');
 
 async function quotesApi() {
-  const quotes = await fetchApiQuotes("age");
-  quotesDom.innerText = quotes[0].quote;
-  authorDom.innerHTML = `&mdash; ${quotes[0].author}`;
-  catDom.innerText = `${quotes[0].category}`;
+  const quotes = await fetchApiQuotes('age');
+  console.log(quotes);
+  // quotesDom.innerText = quotes[0].quote;
+  // authorDom.innerHTML = `&mdash; ${quotes[0].author}`;
+  // catDom.innerText = `${quotes[0].category}`;
 }
 
 quotesApi();
@@ -44,7 +45,7 @@ categoryList.forEach((item) => {
 
 dropdown.addEventListener('click', (e) => {
   const category = e.target.dataset.category;
-console.log(category);
+  console.log('category', category);
   quotesApi(category);
 });
 
