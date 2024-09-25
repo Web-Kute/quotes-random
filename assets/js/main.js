@@ -20,9 +20,7 @@ const catIndex = Math.floor(Math.random() * 66);
 const dropdown = document.querySelector('.dropdown-menu');
 
 async function quotesApi(e) {
-  const quotes = await fetchApiQuotes(
-    (e.target.dataset.category = categoryList[catIndex]),
-  );
+  const quotes = await fetchApiQuotes(e.target.dataset.category);
   console.log('quotes', quotes);
 
   quotesDom.innerText = quotes[0].quote;
