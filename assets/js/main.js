@@ -13,29 +13,21 @@ async function fetchApiQuotes(category) {
   const data = await response.json();
   return data;
 }
-const selectCategory = document.getElementById('category');
+// const selectCategory = document.getElementById('category');
 const quotesDom = document.querySelector('blockquote');
 const authorDom = document.querySelector('figcaption');
 const catDom = document.querySelector('.caty');
-const submit = document.getElementById('submit');
+// const submit = document.getElementById('submit');
 const dropdown = document.querySelector('.dropdown-menu');
 
 async function quotesApi() {
-  const quotes = await fetchApiQuotes(selectCategory.value);
+  const quotes = await fetchApiQuotes(categoryList[0].quote);
   quotesDom.innerText = quotes[0].quote;
   authorDom.innerHTML = `&mdash; ${quotes[0].author}`;
   catDom.innerText = `${quotes[0].category}`;
 }
 
 quotesApi();
-
-// categoryList.forEach((cat) => {
-//   const option = document.createElement('option');
-//   option.classList.add('quote-category');
-//   option.value = cat;
-//   option.text = cat;
-//   selectCategory.appendChild(option);
-// });
 
 categoryList.forEach((item) => {
   const li = document.createElement('li');
@@ -52,8 +44,7 @@ categoryList.forEach((item) => {
 
 dropdown.addEventListener('click', (e) => {
   const category = e.target.dataset.category;
-  selectCategory.value = category;
-  quotesApi();
+  quotesApi(category);
 });
 
 // selectCategory.addEventListener('change', quotesApi);
