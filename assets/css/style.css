@@ -200,6 +200,10 @@ figure .caty {
 
 main {
   margin: 1rem 0 2rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
 }
 
 .tooltip {
@@ -245,4 +249,14 @@ main {
   /* set new values */
   right: 100%;
   margin-right: 15px;
+}
+
+.dropdown {
+  color: hsl(210, 29%, 24%);
+  background-color: hsl(0, 0%, 100%);
+  border: radius 7px;
+}
+
+.btn:hover {
+  color: hsl(210, 29%, 24%);
 }/*# sourceMappingURL=style.css.map */
