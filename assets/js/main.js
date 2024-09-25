@@ -20,6 +20,10 @@ const catDom = document.querySelector('.caty');
 const submit = document.getElementById('submit');
 
 async function quotesApi() {
+  if (!selectCategory.value) {
+    console.error('No category selected');
+    return;
+  }
   const quotes = await fetchApiQuotes(selectCategory.value);
   quotesDom.innerText = quotes[0].quote;
   authorDom.innerHTML = `&mdash; ${quotes[0].author}`;
@@ -28,7 +32,7 @@ async function quotesApi() {
 
 quotesApi();
 
-categoryList.map((cat) => {
+categoryList.forEach((cat) => {
   const option = document.createElement('option');
   option.classList.add('quote-category');
   option.value = cat;
