@@ -155,8 +155,9 @@ main {
 .dropdown {
   color: map-get(variables.$colors, 'midnight-blue');
   background-color: map-get($map: variables.$colors, $key: 'white');
-  border: radius 7px;
-  max-height: 80vw;
+  border-radius: 7px;
+  max-height: 500px;
+  overflow: scroll;
 }
 
 .btn {
