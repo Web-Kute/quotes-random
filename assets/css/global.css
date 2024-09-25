@@ -156,4 +156,9 @@ main {
 .btn-white {
   color: hsl(210, 29%, 24%);
   background-color: hsl(0, 0%, 100%);
+  border: radius 7px;
+}
+
+.btn:hover {
+  color: hsl(210, 29%, 24%);
 }/*# sourceMappingURL=global.css.map */
