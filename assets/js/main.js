@@ -33,7 +33,7 @@ quotesApi();
 categoryList.forEach((item) => {
   const li = document.createElement('li');
   const link = document.createElement('a');
-  li.dataset.category = item;
+  link.dataset.category = item;
   link.href = '#';
   link.classList.add('dropdown-item');
   link.innerText = item;
