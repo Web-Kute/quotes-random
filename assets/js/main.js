@@ -42,5 +42,6 @@ categoryList.forEach((item) => {
 
 dropdown.addEventListener('click', (e) => {
   const category = e.target.dataset.category;
+  console.log(category);
   quotesApi(category);
 });
