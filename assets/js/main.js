@@ -42,9 +42,4 @@ categoryList.forEach((item) => {
   dropdown.appendChild(li);
 });
 
-dropdown.addEventListener('click', (e) => {
-  // const category = e.target.dataset.category;
-  // console.log(category);
-  // quotesApi({ target: { dataset: { category } } });
-  quotesApi();
-});
+dropdown.addEventListener('click',quotesApi);
