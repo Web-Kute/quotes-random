@@ -151,4 +151,9 @@ main {
   /* set new values */
   right: 100%;
   margin-right: 15px;
+}
+
+.btn-white {
+  color: hsl(210, 29%, 24%);
+  background-color: hsl(0, 0%, 100%);
 }/*# sourceMappingURL=global.css.map */

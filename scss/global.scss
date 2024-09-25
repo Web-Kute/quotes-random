@@ -151,3 +151,8 @@ main {
     margin-right: 15px;
   }
 }
+
+.btn-white{
+  color: map-get(variables.$colors, 'midnight-blue');
+  background-color: map-get($map: variables.$colors, $key:"white" );
+}

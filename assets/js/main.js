@@ -40,11 +40,20 @@ categoryList.forEach((cat) => {
 categoryList.forEach((item) => {
   const li = document.createElement('li');
   const link = document.createElement('a');
+  li.dataset.category = item;
   link.href = '#';
   link.classList.add('dropdown-item');
   link.innerText = item;
   li.appendChild(link);
   dropdown.appendChild(li);
+  const catItem = document.querySelectorAll('.dropdown-item');
+  console.log(catItem);
+});
+
+dropdown.addEventListener('click', (e) => {
+  const category = e.target.dataset.category;
+  selectCategory.value = category;
+  quotesApi();
 });
 
 selectCategory.addEventListener('change', quotesApi);
