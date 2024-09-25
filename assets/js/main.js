@@ -1,13 +1,5 @@
 import { auth, options } from './authen.js';
 import { categoryList } from './category.js';
-import NiceSelect from './assets/select/dist/js/nice-select2';
-
-NiceSelect.bind(document.getElementById('a-select'), {
-  searchable: true,
-  placeholder: 'select',
-  searchtext: 'zoek',
-  selectedtext: 'geselecteerd',
-});
 
 async function fetchApiQuotes(category) {
   const response = await fetch(`${auth.url}?category=${category}`, options);
