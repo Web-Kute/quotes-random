@@ -20,8 +20,8 @@ const catDom = document.querySelector('.caty');
 // const submit = document.getElementById('submit');
 const dropdown = document.querySelector('.dropdown-menu');
 
-async function quotesApi(e) {
-  const quotes = await fetchApiQuotes(e.target);
+async function quotesApi() {
+  const quotes = await fetchApiQuotes();
   console.log("quotes", quotes);
   quotesDom.innerText = quotes[0].quote;
   authorDom.innerHTML = `&mdash; ${quotes[0].author}`;
@@ -44,7 +44,7 @@ categoryList.forEach((item) => {
 });
 
 dropdown.addEventListener('click', (e) => {
-  const category = e.target;
+  const category = e.target.dataset.category;
   console.log('category', category);
   quotesApi(category);
 });
