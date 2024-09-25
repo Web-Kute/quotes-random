@@ -21,7 +21,9 @@ const catIndex = Math.floor(Math.random() * 66);
 const dropdown = document.querySelector('.dropdown-menu');
 
 async function quotesApi(e) {
-  const quotes = await fetchApiQuotes(e.target.dataset.category);
+  const quotes = await fetchApiQuotes(
+    (e.target.dataset.category = categoryList[catIndex]),
+  );
   console.log('quotes', quotes);
 
   quotesDom.innerText = quotes[0].quote;
@@ -42,4 +44,4 @@ categoryList.forEach((item) => {
   dropdown.appendChild(li);
 });
 
-dropdown.addEventListener('click',quotesApi);
+dropdown.addEventListener('click', quotesApi);
