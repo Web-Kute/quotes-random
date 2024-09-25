@@ -1,7 +1,7 @@
 import { auth, options } from './authen.js';
 import { categoryList } from './category.js';
 
-async function fetchApiQuotes(category = categoryList[catIndex]) {
+async function fetchApiQuotes(category) {
   const response = await fetch(`${auth.url}?category=${category}`, options);
 
   if (!response.ok) {
