@@ -20,12 +20,12 @@ const catDom = document.querySelector('.caty');
 // const submit = document.getElementById('submit');
 const dropdown = document.querySelector('.dropdown-menu');
 
-async function quotesApi() {
-  const quotes = await fetchApiQuotes('age');
+async function quotesApi(e) {
+  const quotes = await fetchApiQuotes(e.target);
   console.log("quotes", quotes);
-  // quotesDom.innerText = quotes[0].quote;
-  // authorDom.innerHTML = `&mdash; ${quotes[0].author}`;
-  // catDom.innerText = `${quotes[0].category}`;
+  quotesDom.innerText = quotes[0].quote;
+  authorDom.innerHTML = `&mdash; ${quotes[0].author}`;
+  catDom.innerText = `${quotes[0].category}`;
 }
 
 quotesApi();
