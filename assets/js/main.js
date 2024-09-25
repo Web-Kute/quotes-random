@@ -17,12 +17,12 @@ async function fetchApiQuotes(category) {
 const quotesDom = document.querySelector('blockquote');
 const authorDom = document.querySelector('figcaption');
 const catDom = document.querySelector('.caty');
-// const submit = document.getElementById('submit');
+  const catIndex = Math.floor(Math.random() * 66);
 const dropdown = document.querySelector('.dropdown-menu');
 
-async function quotesApi() {
+async function quotesApi(categoryList[catIndex]) {
   const quotes = await fetchApiQuotes();
-  console.log("quotes", quotes);
+  console.log('quotes', quotes);
   quotesDom.innerText = quotes[0].quote;
   authorDom.innerHTML = `&mdash; ${quotes[0].author}`;
   catDom.innerText = `${quotes[0].category}`;
