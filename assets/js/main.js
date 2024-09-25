@@ -1,7 +1,7 @@
 import { auth, options } from './authen.js';
 import { categoryList } from './category.js';
 
-async function fetchApiQuotes(category = 'age') {
+async function fetchApiQuotes(category ) {
   const response = await fetch(`${auth.url}?category=${category}`, options);
 
   if (!response.ok) {
@@ -21,7 +21,7 @@ const dropdown = document.querySelector('.dropdown-menu');
 
 async function quotesApi(e) {
   const quotes = await fetchApiQuotes(
-    e.target.dataset.category || categoryList[catIndex],
+    e.target.dataset.category = categoryList[catIndex],
   );
   console.log('quotes', quotes);
 
