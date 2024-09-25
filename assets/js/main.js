@@ -1,7 +1,7 @@
 import { auth, options } from './authen.js';
 import { categoryList } from './category.js';
 
-async function fetchApiQuotes(category) {
+async function fetchApiQuotes(category = categoryList[catIndex]) {
   const response = await fetch(`${auth.url}?category=${category}`, options);
 
   if (!response.ok) {
@@ -17,12 +17,11 @@ async function fetchApiQuotes(category) {
 const quotesDom = document.querySelector('blockquote');
 const authorDom = document.querySelector('figcaption');
 const catDom = document.querySelector('.caty');
-  const catIndex = Math.floor(Math.random() * 66);
+const catIndex = Math.floor(Math.random() * 66);
 const dropdown = document.querySelector('.dropdown-menu');
 
 async function quotesApi() {
-  const quotes = await fetchApiQuotes((categoryList[catIndex]));
-  console.log('quotes', quotes);
+  const quotes = await fetchApiQuotes();
   quotesDom.innerText = quotes[0].quote;
   authorDom.innerHTML = `&mdash; ${quotes[0].author}`;
   catDom.innerText = `${quotes[0].category}`;
@@ -39,12 +38,9 @@ categoryList.forEach((item) => {
   link.innerText = item;
   li.appendChild(link);
   dropdown.appendChild(li);
-  const catItem = document.querySelectorAll('.dropdown-item');
-  console.log(catItem);
 });
 
 dropdown.addEventListener('click', (e) => {
   const category = e.target.dataset.category;
-  console.log('category', category);
   quotesApi(category);
 });
