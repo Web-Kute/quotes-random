@@ -28,6 +28,7 @@ async function fetchApiQuotes(category = categoryList[catIndex]) {
 async function fetchAndDisplayQuote(targetCategory) {
   try {
     const quotes = await fetchApiQuotes(targetCategory);
+    console.log("Quotes: ", quotes);
 
     quotesDom.textContent = quotes[0].quote;
     authorDom.textContent = `-- ${quotes[0].author}`;
