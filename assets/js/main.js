@@ -6,8 +6,11 @@ const authorDom = document.querySelector('figcaption');
 const catDom = document.querySelector('.caty');
 const catIndex = Math.floor(Math.random() * 66);
 const dropdown = document.querySelector('.dropdown-menu');
+const userError = document.querySelector('.user-error');
+const MESSAGE_TEXT_ERROR =
+  "L'ignorance est une feuille blanche sur laquelle on peut écrire, mais l'erreur est une feuille griffonnée qu'il faut d'abord effacer. Nous finissons par apprendre qu'il ne sert à rien de trop s'affliger de nos erreurs.";
 
-async function fetchApiQuotes(category=categoryList[catIndex]) {
+async function fetchApiQuotes(category = categoryList[catIndex]) {
   const response = await fetch(`${auth.url}?category=${category}`, options);
 
   if (!response.ok) {
@@ -22,13 +25,14 @@ async function fetchApiQuotes(category=categoryList[catIndex]) {
 
 async function fetchAndDisplayQuote(targetCategory) {
   try {
-    const quotes = await fetchApiQuotes(targetCategory);
+    const quotes = await fetchApiQuotes(targetCategor);
     console.log('quotes', quotes);
 
     quotesDom.innerText = quotes[0].quote;
     authorDom.textContent = `-- ${quotes[0].author}`;
     catDom.innerText = `${quotes[0].category}`;
   } catch (error) {
+    userError.textContent = MESSAGE_TEXT_ERROR;
     console.error('Error fetching quotes:', error);
   }
 }
