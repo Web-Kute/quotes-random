@@ -14,7 +14,6 @@ const MESSAGE_TEXT_ERROR =
 
 async function fetchApiQuotes(category = categoryList[catIndex]) {
   const response = await fetch(`${auth.url}?category=${category}`, options);
-  dropdownToggle.textContent = category;
 
   if (!response.ok) {
     const message = `An error has occured: ${response.status}`;
@@ -29,10 +28,10 @@ async function fetchApiQuotes(category = categoryList[catIndex]) {
 async function fetchAndDisplayQuote(targetCategory) {
   try {
     const quotes = await fetchApiQuotes(targetCategory);
-    console.log('quotes caty: ', quotes);
-    targetCategory !== null || targetCategory !== undefined
+    console.log('quotes catE: ', quotes);
+    targetCategory === null || targetCategory === ''
       ? (dropdownToggle.textContent = targetCategory)
-      : null;
+      : (dropdownToggle.textContent = 'Chooose a category');
     // dropdownToggle.textContent = targetCategory;
 
     quotesDom.textContent = quotes[0].quote;
