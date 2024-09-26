@@ -4,13 +4,16 @@ import { categoryList } from './category.js';
 const quotesDom = document.querySelector('blockquote');
 const authorDom = document.querySelector('figcaption');
 const catDom = document.querySelector('.caty');
-const catIndex = Math.floor(Math.random() * 66);
+let catIndex = Math.floor(Math.random() * 66);
 const dropdown = document.querySelector('.dropdown-menu');
 // const dropdownItem = document.querySelectorAll('.dropdown-item');
 const dropdownToggle = document.querySelector('.dropdown-toggle');
 const userError = document.querySelector('.user-error');
 const MESSAGE_TEXT_ERROR =
   "L'ignorance est une feuille blanche sur laquelle on peut écrire, mais l'erreur est une feuille griffonnée qu'il faut d'abord effacer. Nous finissons par apprendre qu'il ne sert à rien de trop s'affliger de nos erreurs.";
+
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
 
 async function fetchApiQuotes(category = categoryList[catIndex]) {
   const response = await fetch(`${auth.url}?category=${category}`, options);
@@ -57,4 +60,15 @@ document.querySelector('.dropdown').addEventListener('click', (e) => {
     fetchAndDisplayQuote(e.target.dataset.category);
     dropdownToggle.textContent = e.target.dataset.category;
   }
+});
+
+
+nextBtn.addEventListener('click', () => {
+  catIndex = (catIndex + 1) % categoryList.length;
+  fetchAndDisplayQuote(categoryList[catIndex]);
+});
+
+prevBtn.addEventListener('click', () => {
+  catIndex = (catIndex - 1 + categoryList.length) % categoryList.length;
+  fetchAndDisplayQuote(categoryList[catIndex]);
 });
