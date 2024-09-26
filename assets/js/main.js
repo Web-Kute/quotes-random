@@ -28,18 +28,12 @@ async function fetchApiQuotes(category = categoryList[catIndex]) {
 async function fetchAndDisplayQuote(targetCategory) {
   try {
     const quotes = await fetchApiQuotes(targetCategory);
-    console.log('quotes catEg: ', quotes);
-    // targetCategory !== null || targetCategory === ''
-    //   ? (dropdownToggle.textContent = targetCategory)
-    //   : (dropdownToggle.textContent = 'Chooose a category');
-    // dropdownToggle.textContent = targetCategory;
 
     quotesDom.textContent = quotes[0].quote;
     authorDom.textContent = `-- ${quotes[0].author}`;
     catDom.innerText = `${quotes[0].category}`;
   } catch (error) {
-    userError.textContent = `${MESSAGE_TEXT_ERROR} 
-                              ${error}`;
+    userError.textContent = `${MESSAGE_TEXT_ERROR} ${error}`;
     console.error('Error fetching quotes:', error);
   }
 }
