@@ -7,6 +7,7 @@ const catDom = document.querySelector('.caty');
 let catIndex = Math.floor(Math.random() * 66);
 const dropdown = document.querySelector('.dropdown-menu');
 // const dropdownItem = document.querySelectorAll('.dropdown-item');
+const submit = document.getElementById('submit');
 const dropdownToggle = document.querySelector('.dropdown-toggle');
 const userError = document.querySelector('.user-error');
 const MESSAGE_TEXT_ERROR =
@@ -62,6 +63,10 @@ document.querySelector('.dropdown').addEventListener('click', (e) => {
   }
 });
 
+submit.addEventListener('click', (e) => {
+  e.preventDefault();
+  fetchAndDisplayQuote();
+});
 
 // nextBtn.addEventListener('click', () => {
 //   catIndex = (catIndex + 1) % categoryList.length;
