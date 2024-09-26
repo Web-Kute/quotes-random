@@ -161,15 +161,16 @@ main {
 }
 
 .dropdown-toggle {
-  width: 100%!important;
+  width: 100%;
+  height: 40px;
   a {
-    width: 100%!important;
-    height: 20px!important;
+    width: 100%;
+    height: 20px;
   }
   &::after {
-    right: 20px!important;
-    position: absolute!important;
-    top: 15px!important;
+    right: 20px;
+    position: absolute;
+    top: 15px;
   }
 }
 
