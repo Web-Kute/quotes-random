@@ -64,6 +64,7 @@ document.querySelector('.dropdown').addEventListener('click', (e) => {
 
 submit.addEventListener('click', (e) => {
   e.preventDefault();
+catIndex = Math.floor(Math.random() * 66);
 console.log(categoryList[catIndex]);
 
   const category = dropdownToggle.textContent.includes('Choose')
