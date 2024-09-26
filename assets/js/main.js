@@ -31,7 +31,7 @@ async function fetchAndDisplayQuote(targetCategory) {
     console.log('quotes caty: ', quotes);
     targetCategory !== null || targetCategory !== undefined
       ? (dropdownToggle.textContent = targetCategory)
-      : (dropdownToggle.textContent = 'Choose a category');
+      : null;
     // dropdownToggle.textContent = targetCategory;
 
     quotesDom.textContent = quotes[0].quote;
