@@ -20,9 +20,9 @@ async function fetchApiQuotes(category=categoryList[catIndex]) {
   return data;
 }
 
-async function fetchAndDisplayQuote(e) {
+async function fetchAndDisplayQuote(targ) {
   try {
-    const quotes = await fetchApiQuotes();
+    const quotes = await fetchApiQuotes(targ);
     console.log('quotes', quotes);
 
     quotesDom.innerText = quotes[0].quote;
