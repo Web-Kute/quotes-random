@@ -6,7 +6,7 @@ const authorDom = document.querySelector('figcaption');
 const catDom = document.querySelector('.caty');
 const catIndex = Math.floor(Math.random() * 66);
 const dropdown = document.querySelector('.dropdown-menu');
-const dropdownItem = document.querySelectorAll('.dropdown-item');
+// const dropdownItem = document.querySelectorAll('.dropdown-item');
 const dropdownToggle = document.querySelector('.dropdown-toggle');
 const userError = document.querySelector('.user-error');
 const MESSAGE_TEXT_ERROR =
@@ -28,7 +28,7 @@ async function fetchApiQuotes(category = categoryList[catIndex]) {
 async function fetchAndDisplayQuote(targetCategory) {
   try {
     const quotes = await fetchApiQuotes(targetCategory);
-    console.log('quotes: ', quotes);
+    console.log('quotes cat: ', quotes);
 
     dropdownToggle.textContent = targetCategory;
 
@@ -36,7 +36,8 @@ async function fetchAndDisplayQuote(targetCategory) {
     authorDom.textContent = `-- ${quotes[0].author}`;
     catDom.innerText = `${quotes[0].category}`;
   } catch (error) {
-    userError.textContent = `${MESSAGE_TEXT_ERROR} ${error}`;
+    userError.textContent = `${MESSAGE_TEXT_ERROR} 
+                              ${error}`;
     console.error('Error fetching quotes:', error);
   }
 }
