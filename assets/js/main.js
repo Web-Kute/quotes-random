@@ -1,7 +1,13 @@
 import { auth, options } from './authen.js';
 import { categoryList } from './category.js';
 
-async function fetchApiQuotes(category) {
+const quotesDom = document.querySelector('blockquote');
+const authorDom = document.querySelector('figcaption');
+const catDom = document.querySelector('.caty');
+const catIndex = Math.floor(Math.random() * 66);
+const dropdown = document.querySelector('.dropdown-menu');
+
+async function fetchApiQuotes(category=categoryList[catIndex]) {
   const response = await fetch(`${auth.url}?category=${category}`, options);
 
   if (!response.ok) {
@@ -13,15 +19,10 @@ async function fetchApiQuotes(category) {
   const data = await response.json();
   return data;
 }
-const quotesDom = document.querySelector('blockquote');
-const authorDom = document.querySelector('figcaption');
-const catDom = document.querySelector('.caty');
-const catIndex = Math.floor(Math.random() * 66);
-const dropdown = document.querySelector('.dropdown-menu');
 
-async function fetchAndDisplayQuote() {
+async function fetchAndDisplayQuote(e) {
   try {
-    const quotes = await fetchApiQuotes(categoryList[catIndex]);
+    const quotes = await fetchApiQuotes(e.target.dataset.category);
     console.log('quotes', quotes);
 
     quotesDom.innerText = quotes[0].quote;
