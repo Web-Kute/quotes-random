@@ -64,11 +64,10 @@ document.querySelector('.dropdown').addEventListener('click', (e) => {
 
 submit.addEventListener('click', (e) => {
   e.preventDefault();
-catIndex = Math.floor(Math.random() * 66);
-console.log(categoryList[catIndex]);
+  catIndex = Math.floor(Math.random() * 66);
 
   const category = dropdownToggle.textContent.includes('Choose')
-    ? "age"
+    ? categoryList[catIndex]
     : dropdownToggle.textContent;
 
   fetchAndDisplayQuote(category);
