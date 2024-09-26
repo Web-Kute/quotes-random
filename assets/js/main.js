@@ -25,14 +25,15 @@ async function fetchApiQuotes(category = categoryList[catIndex]) {
 
 async function fetchAndDisplayQuote(targetCategory) {
   try {
-    const quotes = await fetchApiQuotes(targetCategor);
+    const quotes = await fetchApiQuotes(targetCategory);
     console.log('quotes', quotes);
 
+    targetCategory.innerText = `${quotes[0].category}`;
     quotesDom.innerText = quotes[0].quote;
     authorDom.textContent = `-- ${quotes[0].author}`;
     catDom.innerText = `${quotes[0].category}`;
   } catch (error) {
-    userError.textContent = MESSAGE_TEXT_ERROR;
+    userError.textContent = `${MESSAGE_TEXT_ERROR} ${error}`;
     console.error('Error fetching quotes:', error);
   }
 }
