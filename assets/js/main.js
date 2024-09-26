@@ -57,8 +57,6 @@ categoryList.forEach((item) => {
   dropdown.appendChild(li);
 });
 
-// dropdown.addEventListener('click', fetchAndDisplayQuote);
-
 document.querySelector('.dropdown').addEventListener('click', (e) => {
   if (e.target.classList.contains('dropdown-item')) {
     fetchAndDisplayQuote(e.target.dataset.category);

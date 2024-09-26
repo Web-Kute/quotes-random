@@ -156,7 +156,7 @@ main {
   color: map-get(variables.$colors, 'midnight-blue');
   background-color: map-get($map: variables.$colors, $key: 'white');
   border-radius: 7px;
-  min-width: 190px;
+  min-width: 200px;
   text-transform: capitalize;
 }
 
