@@ -28,10 +28,10 @@ async function fetchApiQuotes(category = categoryList[catIndex]) {
 async function fetchAndDisplayQuote(targetCategory) {
   try {
     const quotes = await fetchApiQuotes(targetCategory);
-    console.log('quotes catE: ', quotes);
-    targetCategory === null || targetCategory === ''
-      ? (dropdownToggle.textContent = targetCategory)
-      : (dropdownToggle.textContent = 'Chooose a category');
+    console.log('quotes catEg: ', quotes);
+    // targetCategory !== null || targetCategory === ''
+    //   ? (dropdownToggle.textContent = targetCategory)
+    //   : (dropdownToggle.textContent = 'Chooose a category');
     // dropdownToggle.textContent = targetCategory;
 
     quotesDom.textContent = quotes[0].quote;
@@ -62,5 +62,6 @@ categoryList.forEach((item) => {
 document.querySelector('.dropdown').addEventListener('click', (e) => {
   if (e.target.classList.contains('dropdown-item')) {
     fetchAndDisplayQuote(e.target.dataset.category);
+    dropdownToggle.textContent = e.target.dataset.category;
   }
 });
