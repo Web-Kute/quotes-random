@@ -164,6 +164,7 @@ main {
 .dropdown-toggle {
   width: 100%;
   height: 40px;
+  padding-right: 20px;
 }
 .dropdown-toggle a {
   width: 100%;
