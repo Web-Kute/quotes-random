@@ -65,7 +65,6 @@ document.querySelector('.dropdown').addEventListener('click', (e) => {
 submit.addEventListener('click', (e) => {
   e.preventDefault();
   const category = dropdownToggle.textContent;
-  console.log(category);
 
   fetchAndDisplayQuote(category);
 });
