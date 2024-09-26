@@ -28,12 +28,10 @@ async function fetchApiQuotes(category = categoryList[catIndex]) {
 async function fetchAndDisplayQuote(targetCategory) {
   try {
     const quotes = await fetchApiQuotes(targetCategory);
-    console.log('quotes', quotes);
+    console.log('quotes: ', quotes);
 
-    dropdownItem.forEach((item) => {
-      dropdownToggle.textContent = item.dataset.category;
-      console.log("item: ", item.dataset.category);
-    });
+    dropdownToggle.textContent = targetCategory;
+
     quotesDom.textContent = quotes[0].quote;
     authorDom.textContent = `-- ${quotes[0].author}`;
     catDom.innerText = `${quotes[0].category}`;
