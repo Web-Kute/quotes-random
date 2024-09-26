@@ -19,9 +19,9 @@ const catDom = document.querySelector('.caty');
 const catIndex = Math.floor(Math.random() * 66);
 const dropdown = document.querySelector('.dropdown-menu');
 
-async function quotesApi(cat, e) {
+async function fetchAndDisplayQuote() {
   try {
-    const quotes = await fetchApiQuotes(e.target.dataset.category);
+    const quotes = await fetchApiQuotes(categoryList[catIndex]);
     console.log('quotes', quotes);
 
     quotesDom.innerText = quotes[0].quote;
@@ -32,7 +32,7 @@ async function quotesApi(cat, e) {
   }
 }
 
-quotesApi();
+fetchAndDisplayQuote();
 
 categoryList.forEach((item) => {
   const li = document.createElement('li');
@@ -45,10 +45,10 @@ categoryList.forEach((item) => {
   dropdown.appendChild(li);
 });
 
-// dropdown.addEventListener('click', quotesApi);
+// dropdown.addEventListener('click', fetchAndDisplayQuote);
 
 document.querySelector('.dropdown').addEventListener('click', (e) => {
   if (e.target.classList.contains('dropdown-item')) {
-    quotesApi(e);
+    fetchAndDisplayQuote(e);
   }
 });
