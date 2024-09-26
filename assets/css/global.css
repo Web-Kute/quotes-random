@@ -146,6 +146,11 @@ main {
 .tooltips:hover::before, .tooltips:hover::after {
   display: block;
 }
+@media (max-width: 599px) {
+  .tooltips:hover::before, .tooltips:hover::after {
+    display: none;
+  }
+}
 .tooltips.left:before {
   /* set new values */
   right: 100%;
