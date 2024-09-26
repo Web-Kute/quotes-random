@@ -175,6 +175,10 @@ main {
     right: 20px;
     position: absolute;
     top: 15px;
+    border-top: 0.5em solid map-get(variables.$colors, "green-sea");
+    border-right: 0.4em solid transparent;
+    border-bottom: 0;
+    border-left: 0.4em solid transparent;
   }
 }
 
@@ -187,20 +191,5 @@ main {
 .btn {
   &:hover {
     color: map-get(variables.$colors, 'midnight-blue');
-  }
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  column-gap: 5rem;
-  margin: 3rem auto;
-  .previous,
-  .next {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: map-get(variables.$colors, 'sun-flower');
-    cursor: pointer;
   }
 }
