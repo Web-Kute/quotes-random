@@ -161,14 +161,17 @@ main {
   text-transform: capitalize;
 }
 
+.dropdown-toggle {
+  width: 100% !important;
+}
 .dropdown-toggle a {
-  width: 100%;
-  height: 20px;
+  width: 100% !important;
+  height: 20px !important;
 }
 .dropdown-toggle::after {
-  right: 20px;
-  position: absolute;
-  top: 15px;
+  right: 20px !important;
+  position: absolute !important;
+  top: 15px !important;
 }
 
 .dropdown-menu {
