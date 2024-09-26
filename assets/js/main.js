@@ -32,7 +32,7 @@ async function fetchAndDisplayQuote(targetCategory) {
 
     dropdownItem.forEach((item) => {
       dropdownToggle.textContent = item.dataset.category;
-      console.log(item.dataset.category);
+      console.log("item: ", item.dataset.category);
     });
     quotesDom.textContent = quotes[0].quote;
     authorDom.textContent = `-- ${quotes[0].author}`;
