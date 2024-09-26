@@ -7,7 +7,7 @@ const catDom = document.querySelector('.caty');
 const catIndex = Math.floor(Math.random() * 66);
 const dropdown = document.querySelector('.dropdown-menu');
 // const dropdownItem = document.querySelectorAll('.dropdown-item');
-const dropdownToggle = document.querySelector('.dropdown-toggle a');
+const dropdownToggle = document.querySelector('.dropdown-toggle');
 const userError = document.querySelector('.user-error');
 const MESSAGE_TEXT_ERROR =
   "L'ignorance est une feuille blanche sur laquelle on peut écrire, mais l'erreur est une feuille griffonnée qu'il faut d'abord effacer. Nous finissons par apprendre qu'il ne sert à rien de trop s'affliger de nos erreurs.";
