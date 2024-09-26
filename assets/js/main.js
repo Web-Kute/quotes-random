@@ -58,7 +58,7 @@ categoryList.forEach((item) => {
 document.querySelector('.dropdown').addEventListener('click', (e) => {
   if (e.target.classList.contains('dropdown-item')) {
     fetchAndDisplayQuote(e.target.dataset.category);
-    dropdownToggle.textContent += e.target.dataset.category;
+    dropdownToggle.insertAdjacentText("afterbegin", e.target.dataset.category);
   }
 });
 
