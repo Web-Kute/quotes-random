@@ -157,6 +157,14 @@ main {
   color: hsl(210, 29%, 24%);
   background-color: hsl(0, 0%, 100%);
   border-radius: 7px;
+  min-width: 170px;
+  text-transform: capitalize;
+}
+
+.dropdown-toggle::after {
+  right: 20px;
+  position: absolute;
+  top: 15px;
 }
 
 .dropdown-menu {
