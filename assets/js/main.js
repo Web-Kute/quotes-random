@@ -49,6 +49,6 @@ categoryList.forEach((item) => {
 
 document.querySelector('.dropdown').addEventListener('click', (e) => {
   if (e.target.classList.contains('dropdown-item')) {
-    fetchAndDisplayQuote(e);
+    fetchAndDisplayQuote(e.target.dataset.category);
   }
 });
