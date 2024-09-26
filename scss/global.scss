@@ -101,7 +101,7 @@ main {
   justify-content: center;
 }
 
-.tooltip {
+.tooltips {
   position: relative; /* making the .tooltip span a container for the tooltip text */
   transition-duration: 300ms; /* little indicater to indicate it's hoverable */
   &:before {

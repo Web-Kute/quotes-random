@@ -108,11 +108,11 @@ main {
       justify-content: center;
 }
 
-.tooltip {
+.tooltips {
   position: relative; /* making the .tooltip span a container for the tooltip text */
   transition-duration: 300ms; /* little indicater to indicate it's hoverable */
 }
-.tooltip:before {
+.tooltips:before {
   content: attr(data-text); /* here's the magic */
   position: absolute;
   font-size: 1rem;
@@ -132,7 +132,7 @@ main {
   text-align: center;
   display: none; /* hide by default */
 }
-.tooltip::after {
+.tooltips::after {
   content: "";
   position: absolute;
   right: -15px;
@@ -144,10 +144,10 @@ main {
   border-right: 10px solid hsl(210, 29%, 24%);
   display: none;
 }
-.tooltip:hover::before, .tooltip:hover::after {
+.tooltips:hover::before, .tooltips:hover::after {
   display: block;
 }
-.tooltip.left:before {
+.tooltips.left:before {
   /* set new values */
   right: 100%;
   margin-right: 15px;
