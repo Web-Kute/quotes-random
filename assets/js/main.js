@@ -17,7 +17,11 @@ const MESSAGE_TEXT_ERROR =
 // const nextBtn = document.querySelector('.next-btn');
 // const prevBtn = document.querySelector('.prev-btn');
 
-async function fetchApiQuotes(category = categoryList[catIndex]) {
+const capitalizedList = categoryList.map(
+  (word) => word.charAt(0).toUpperCase() + word.slice(1),
+);
+
+async function fetchApiQuotes(category = capitalizedList[catIndex]) {
   showSpinner();
   const response = await fetch(`${auth.url}?category=${category}`, options);
 
@@ -46,7 +50,7 @@ async function fetchAndDisplayQuote(targetCategory) {
 
 fetchAndDisplayQuote();
 
-categoryList.forEach((item) => {
+capitalizedList.forEach((item) => {
   const li = document.createElement('li');
   const link = document.createElement('a');
   link.dataset.category = item;
@@ -69,7 +73,7 @@ submit.addEventListener('click', (e) => {
   catIndex = Math.floor(Math.random() * 66);
 
   const category = dropdownToggle.textContent.includes('Choose')
-    ? categoryList[catIndex]
+    ? capitalizedList[catIndex]
     : dropdownToggle.textContent;
 
   fetchAndDisplayQuote(category);
