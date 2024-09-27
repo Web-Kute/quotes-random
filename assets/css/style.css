@@ -193,11 +193,12 @@ figure figcaption {
 
 .caty {
   position: absolute;
-  right: 0;
-  bottom: 10px;
-  text-transform: uppercase;
+  left: 20px;
+  bottom: -10px;
+  text-transform: capitalize;
   font-size: 1rem;
-  color: hsl(184, 9%, 62%);
+  color: hsl(210, 29%, 24%);
+  background-color: hsl(48, 89%, 50%);
 }
 
 main {
