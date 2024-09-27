@@ -1,5 +1,6 @@
 import { auth, options } from './authen.js';
 import { categoryList } from './category.js';
+import { showSpinner, hideSpinner } from './utils.js';
 
 const quotesDom = document.querySelector('blockquote');
 const authorDom = document.querySelector('figcaption');
@@ -17,6 +18,7 @@ const MESSAGE_TEXT_ERROR =
 // const prevBtn = document.querySelector('.prev-btn');
 
 async function fetchApiQuotes(category = categoryList[catIndex]) {
+  showSpinner();
   const response = await fetch(`${auth.url}?category=${category}`, options);
 
   if (!response.ok) {
@@ -24,7 +26,7 @@ async function fetchApiQuotes(category = categoryList[catIndex]) {
     console.log(message);
     throw new Error(message);
   }
-
+  hideSpinner();
   const data = await response.json();
   return data;
 }
@@ -32,7 +34,6 @@ async function fetchApiQuotes(category = categoryList[catIndex]) {
 async function fetchAndDisplayQuote(targetCategory) {
   try {
     const quotes = await fetchApiQuotes(targetCategory);
-
     quotesDom.textContent = quotes[0].quote;
     authorDom.textContent = `-- ${quotes[0].author}`;
     catDom.innerText = `${quotes[0].category}`;
