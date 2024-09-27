@@ -201,8 +201,13 @@ main {
 
 .dropdown-menu {
   width: 100%;
-  max-height: 500px;
+  max-height: 620px;
   overflow: scroll;
+}
+
+.scroller {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(168, 76%, 36%) hsl(192, 15%, 94%);
 }
 
 .btn:hover {

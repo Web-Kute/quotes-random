@@ -202,8 +202,14 @@ main {
 
 .dropdown-menu {
   width: 100%;
-  max-height: 500px;
+  max-height: 620px;
   overflow: scroll;
+}
+
+.scroller {
+  scrollbar-width: thin;
+  scrollbar-color: map-get(variables.$colors, 'green-sea')
+    map-get(variables.$colors, 'clouds');
 }
 
 .btn {
