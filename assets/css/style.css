@@ -100,10 +100,11 @@ select {
   }
 }
 a:focus-visible,
+button:focus-visible,
 input:focus-visible,
 select:focus-visible {
-  outline: 1px dotted currentColor;
-  outline-offset: 3px;
+  outline: 2px dotted currentColor !important;
+  outline-offset: 2px;
 }
 
 body {
