@@ -193,7 +193,7 @@ figure figcaption {
   text-transform: capitalize;
   font-size: 1rem;
   padding: 5px;
-  color: hsl(210, 29%, 24%);
+  color: currentColor;
   background-color: hsl(48, 89%, 50%);
 }
 
