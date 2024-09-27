@@ -91,7 +91,7 @@ figure figcaption {
 .caty {
   position: absolute;
   left: 20px;
-  bottom: -10px;
+  bottom: -30px;
   text-transform: capitalize;
   font-size: 1rem;
   padding: 5px;
@@ -101,18 +101,12 @@ figure figcaption {
 
 main {
   position: relative;
-  width: 550px;
   margin: 1rem 0 2rem;
   padding: 0 20px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
       justify-content: center;
-}
-@media (max-width: 599px) {
-  main {
-    width: 360px;
-  }
 }
 
 .tooltips {
