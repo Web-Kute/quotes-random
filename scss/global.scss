@@ -177,7 +177,6 @@ main {
   border-radius: 7px;
   min-width: 200px;
   height: 40px;
-  text-transform: capitalize;
 }
 
 .dropdown-toggle {
@@ -204,6 +203,7 @@ main {
   width: 100%;
   max-height: 620px;
   overflow: scroll;
+text-transform: capitalize;
 }
 
 .scroller {
