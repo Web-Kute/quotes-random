@@ -17,6 +17,10 @@
   display: block;
 }
 
+.hide {
+  visibility: hidden;
+}
+
 /* Transparent Overlay */
 .spinner:before {
   content: "";

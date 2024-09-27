@@ -36,6 +36,7 @@ async function fetchAndDisplayQuote(targetCategory) {
     const quotes = await fetchApiQuotes(targetCategory);
     quotesDom.textContent = quotes[0].quote;
     authorDom.textContent = `-- ${quotes[0].author}`;
+    catDom.classList.remove('hide');
     catDom.innerText = `${quotes[0].category}`;
   } catch (error) {
     userError.textContent = `${MESSAGE_TEXT_ERROR} ${error}`;
@@ -72,6 +73,13 @@ submit.addEventListener('click', (e) => {
     : dropdownToggle.textContent;
 
   fetchAndDisplayQuote(category);
+});
+
+window.addEventListener('load', () => {
+  const caty = document.querySelector('.caty');
+  setTimeout(() => {
+    caty.classList.remove('hide');
+  }, 500);
 });
 
 // nextBtn.addEventListener('click', () => {

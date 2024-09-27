@@ -19,6 +19,14 @@ body {
   font-family: roboto;
 }
 
+h1 {
+  font-family: "Roboto slab", serif;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 1.0011rem + 1.3326vw, 3rem);
+  margin: 0.5rem 0;
+  color: hsl(210, 29%, 24%);
+}
+
 header {
   display: -ms-flexbox;
   display: flex;
@@ -97,6 +105,8 @@ figure figcaption {
   padding: 5px;
   color: currentColor;
   background-color: hsl(48, 89%, 50%);
+  width: auto;
+  animation: fadeInAnimation ease 2500ms;
 }
 
 main {
@@ -201,4 +211,13 @@ main {
 
 .btn:hover {
   color: hsl(210, 29%, 24%);
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=global.css.map */
