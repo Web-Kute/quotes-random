@@ -68,10 +68,10 @@ form {
 
 figure {
   position: relative;
-  width: 550px;
-  @include mixins.mobile-only() {
-    width: 350px;
-  }
+  width: 90vw;
+  // @include mixins.mobile-only() {
+  //   width: 350px;
+  // }
   margin-left: auto;
   margin-right: auto;
   font-family: 'Roboto Slab', serif;
@@ -93,6 +93,7 @@ figure {
   bottom: -10px;
   text-transform: capitalize;
   font-size: 1rem;
+  padding: 5px;
   color: map-get(variables.$colors, 'midnight-blue');
   background-color: map-get($map: variables.$colors, $key: 'sun-flower');
 }
