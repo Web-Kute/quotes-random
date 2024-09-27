@@ -12,6 +12,7 @@ select:focus-visible {
 body {
   display: flex;
   flex-direction: column;
+  align-items: center;
   font-family: roboto;
 }
 
@@ -68,7 +69,7 @@ form {
 figure {
   position: relative;
   width: 550px;
-  @include mixins.tablet-portrait-down() {
+  @include mixins.mobile-only() {
     width: 350px;
   }
   margin-left: auto;
@@ -95,7 +96,10 @@ figure {
 }
 
 main {
+  position: relative;
+  width: 550px;
   margin: 1rem 0 2rem;
+  padding: 0 20px;
   display: flex;
   justify-content: center;
 }
@@ -175,7 +179,7 @@ main {
     right: 20px;
     position: absolute;
     top: 15px;
-    border-top: 0.5em solid map-get(variables.$colors, "midnight-blue");
+    border-top: 0.5em solid map-get(variables.$colors, 'midnight-blue');
     border-right: 0.4em solid transparent;
     border-bottom: 0;
     border-left: 0.4em solid transparent;
