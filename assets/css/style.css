@@ -170,15 +170,10 @@ form button:hover {
 
 figure {
   position: relative;
-  width: 550px;
+  width: 90vw;
   margin-left: auto;
   margin-right: auto;
   font-family: "Roboto Slab", serif;
-}
-@media (max-width: 599px) {
-  figure {
-    width: 350px;
-  }
 }
 figure blockquote {
   font-style: italic;
@@ -197,6 +192,7 @@ figure figcaption {
   bottom: -10px;
   text-transform: capitalize;
   font-size: 1rem;
+  padding: 5px;
   color: hsl(210, 29%, 24%);
   background-color: hsl(48, 89%, 50%);
 }
