@@ -90,7 +90,7 @@ figure {
 .caty {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: 10px;
   text-transform: uppercase;
   font-size: 1rem;
   color: map-get(variables.$colors, 'concrete');
@@ -99,6 +99,9 @@ figure {
 main {
   position: relative;
   width: 550px;
+  @include mixins.mobile-only() {
+    width: 360px;
+  }
   margin: 1rem 0 2rem;
   padding: 0 20px;
   display: flex;
