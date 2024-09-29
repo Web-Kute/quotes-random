@@ -25,7 +25,7 @@ body {
       flex-direction: column;
   -ms-flex-align: center;
       align-items: center;
-  font-family: Roboto;
+  font-family: "Roboto";
 }
 
 h1 {
@@ -117,7 +117,7 @@ main {
 
 .tooltips {
   position: relative; /* making the .tooltip span a container for the tooltip text */
-  transition: color 300ms ease-in-out; /* little indicater to indicate it's hoverable */
+  transition-duration: 300ms ease-in-out; /* little indicater to indicate it's hoverable */
 }
 .tooltips:before {
   content: attr(data-text); /* here's the magic */
@@ -154,7 +154,7 @@ main {
 .tooltips:hover::before, .tooltips:hover::after {
   display: block;
 }
-@media (min-width: ) and (max-width: ) {
+@media (max-width: 599px) {
   .tooltips:hover::before, .tooltips:hover::after {
     display: none;
   }

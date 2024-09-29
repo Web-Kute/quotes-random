@@ -22,7 +22,7 @@
 }
 
 @mixin mobile-only {
-  @include breakpoint("mobile", "only") {
+  @media (max-width: map-get(variables.$breakpoints, "mobile-only")) {
     @content;
   }
 }
