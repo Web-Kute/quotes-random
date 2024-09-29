@@ -1,6 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap");
+:root {
+  --base-color: hsl(210, 29%, 24%);
+  --primary-color: hsl(168, 76%, 36%);
+  --secondary-color: hsl(48, 89%, 50%);
+  --white: hsl(0, 0%, 100%);
+  --clouds: hsl(192, 15%, 94%);
+  --silver: hsl(204, 8%, 76%);
+}
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -16,7 +25,7 @@ body {
       flex-direction: column;
   -ms-flex-align: center;
       align-items: center;
-  font-family: roboto;
+  font-family: Roboto;
 }
 
 h1 {
@@ -24,7 +33,7 @@ h1 {
   font-weight: 400;
   font-size: clamp(1.5rem, 1.0011rem + 1.3326vw, 3rem);
   margin: 0.5rem 0;
-  color: hsl(210, 29%, 24%);
+  color: var(--base-color);
 }
 
 header {
@@ -35,8 +44,8 @@ header {
   -ms-flex-align: center;
       align-items: center;
   width: 100%;
-  background-color: hsl(168, 76%, 36%);
-  padding: 20px;
+  background-color: var(--primary-color);
+  padding: 1.25rem;
 }
 
 form fieldset {
@@ -45,37 +54,24 @@ form fieldset {
   -moz-column-gap: 1rem;
        column-gap: 1rem;
   font-size: 1.2rem;
-  color: hsl(0, 0%, 100%);
+  color: var(--white);
   border: none;
-}
-form .select {
-  background-color: hsl(0, 0%, 100%);
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  font-size: 0.9rem;
-  width: 17rem;
-  height: 2.8rem;
-  color: hsl(206, 21%, 15%);
-  padding: 12px;
-  border-radius: 5px;
-  border: 1px solid hsl(204, 8%, 76%);
 }
 form button {
   font-family: "Passion One";
-  width: 40px;
-  height: 40px;
-  font-size: 40px;
-  border-radius: 7px;
-  background-color: hsl(48, 89%, 50%);
-  box-shadow: 1px 1px 2px hsl(192, 15%, 94%);
-  color: hsl(0, 0%, 100%);
-  transition-duration: 300ms;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 2.5rem;
+  border-radius: 0.44rem;
+  background-color: var(--secondary-color);
+  box-shadow: 1px 1px 2px var(--clouds);
+  color: var(--white);
+  transition: background-color 300ms ease-in-out;
   position: relative;
 }
 form button:hover {
-  color: hsl(0, 0%, 100%);
-  background-color: hsl(210, 29%, 24%);
+  color: var(--white);
+  background-color: var(--base-color);
 }
 
 figure {
@@ -83,7 +79,7 @@ figure {
   width: 90vw;
   margin-left: auto;
   margin-right: auto;
-  font-family: "Roboto Slab", serif;
+  font-family: "Roboto slab", serif;
 }
 figure blockquote {
   font-style: italic;
@@ -96,15 +92,15 @@ figure figcaption {
   font-style: italic;
 }
 
-.caty {
+.category-label {
   position: absolute;
-  left: 20px;
-  bottom: -25px;
+  left: 1.25rem;
+  bottom: -1.5625rem;
   text-transform: capitalize;
   font-size: 1rem;
-  padding: 5px;
+  padding: 0.3125rem;
   color: currentColor;
-  background-color: hsl(48, 89%, 50%);
+  background-color: var(--secondary-color);
   width: auto;
   animation: fadeInAnimation ease 2500ms;
 }
@@ -112,7 +108,7 @@ figure figcaption {
 main {
   position: relative;
   margin: 1rem 0 2rem;
-  padding: 0 20px;
+  padding: 0 1.25rem;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
@@ -121,7 +117,7 @@ main {
 
 .tooltips {
   position: relative; /* making the .tooltip span a container for the tooltip text */
-  transition-duration: 300ms; /* little indicater to indicate it's hoverable */
+  transition: color 300ms ease-in-out; /* little indicater to indicate it's hoverable */
 }
 .tooltips:before {
   content: attr(data-text); /* here's the magic */
@@ -133,32 +129,32 @@ main {
   transform: translateY(-50%);
   /* move to right */
   left: 100%;
-  margin-left: 15px; /* and add a small left margin */
+  margin-left: 0.9375rem; /* and add a small left margin */
   /* basic styles */
   width: 160px;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: hsl(210, 29%, 24%);
-  color: hsl(0, 0%, 100%);
+  padding: 0.625rem;
+  border-radius: 0.625rem;
+  background-color: var(--base-color);
+  color: var(--white);
   text-align: center;
   display: none; /* hide by default */
 }
 .tooltips::after {
   content: "";
   position: absolute;
-  right: -15px;
+  right: -0.9375rem;
   top: 50%;
   transform: translateY(-50%);
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid transparent;
-  border-right: 10px solid hsl(210, 29%, 24%);
+  border-top: 0.625rem solid transparent;
+  border-bottom: 0.625rem solid transparent;
+  border-left: 0.625rem solid transparent;
+  border-right: 0.625rem solid var(--base-color);
   display: none;
 }
 .tooltips:hover::before, .tooltips:hover::after {
   display: block;
 }
-@media (max-width: 599px) {
+@media (min-width: ) and (max-width: ) {
   .tooltips:hover::before, .tooltips:hover::after {
     display: none;
   }
@@ -166,53 +162,63 @@ main {
 .tooltips.left:before {
   /* set new values */
   right: 100%;
-  margin-right: 15px;
+  margin-right: 0.9375rem;
 }
 
 .dropdown {
-  color: hsl(210, 29%, 24%);
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 7px;
-  min-width: 200px;
-  height: 40px;
+  color: var(--base-color);
+  background-color: var(--white);
+  border-radius: 0.4375rem;
+  min-width: 12.5rem;
+  height: 2.5rem;
+}
+.dropdown-item:hover {
+  color: var(--white);
+  background-color: var(--primary-color);
+}
+.dropdown-item:active {
+  color: var(--base-color);
+  background-color: var(--silver);
+}
+.dropdown-menu {
+  width: 100%;
+  max-height: 61.25rem;
+  overflow: scroll;
 }
 
 .dropdown-toggle {
   width: 100%;
-  height: 40px;
-  padding-right: 20px;
+  height: 2.5rem;
+  padding-right: 1.25rem;
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  top: 2px;
+  top: 0.125rem;
 }
 .dropdown-toggle a {
   width: 100%;
-  height: 20px;
+  height: 1.25rem;
 }
 .dropdown-toggle::after {
-  right: 20px;
+  right: 1.25rem;
   position: absolute;
-  top: 15px;
-  border-top: 0.5em solid hsl(210, 29%, 24%);
+  top: 0.9375rem;
+  border-top: 0.5em solid var(--base-color);
   border-right: 0.4em solid transparent;
   border-bottom: 0;
   border-left: 0.4em solid transparent;
 }
 
-.dropdown-menu {
-  width: 100%;
-  max-height: 620px;
-  overflow: scroll;
-}
-
 .scroller {
   scrollbar-width: thin;
-  scrollbar-color: hsl(168, 76%, 36%) hsl(192, 15%, 94%);
+  scrollbar-color: var(--primary-color) var(--clouds);
 }
 
+.btn {
+  transition: color 300ms ease-in-out;
+}
 .btn:hover {
-  color: hsl(210, 29%, 24%);
+  color: var(--base-color);
 }
 
 @keyframes fadeInAnimation {
@@ -222,4 +228,8 @@ main {
   100% {
     opacity: 1;
   }
+}
+.selected {
+  color: var(--white);
+  background-color: var(--primary-color);
 }/*# sourceMappingURL=global.css.map */

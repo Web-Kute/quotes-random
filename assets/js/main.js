@@ -4,7 +4,7 @@ import { showSpinner, hideSpinner } from './utils.js';
 
 const quotesDom = document.querySelector('blockquote');
 const authorDom = document.querySelector('figcaption');
-const catDom = document.querySelector('.caty');
+const catDom = document.querySelector('.category-label');
 let catIndex = Math.floor(Math.random() * 66);
 const dropdown = document.querySelector('.dropdown-menu');
 // const dropdownItem = document.querySelectorAll('.dropdown-item');
@@ -65,6 +65,11 @@ document.querySelector('.dropdown').addEventListener('click', (e) => {
   if (e.target.classList.contains('dropdown-item')) {
     fetchAndDisplayQuote(e.target.dataset.category);
     dropdownToggle.textContent = e.target.dataset.category;
+    const dropdownItems = document.querySelectorAll('.dropdown-item');
+    dropdownItems.forEach((item) => {
+      item.classList.remove('selected');
+    });
+    e.target.classList.add('selected');
   }
 });
 
@@ -77,13 +82,6 @@ submit.addEventListener('click', (e) => {
     : dropdownToggle.textContent;
 
   fetchAndDisplayQuote(category);
-});
-
-window.addEventListener('load', () => {
-  const caty = document.querySelector('.caty');
-  setTimeout(() => {
-    caty.classList.remove('hide');
-  }, 500);
 });
 
 // nextBtn.addEventListener('click', () => {

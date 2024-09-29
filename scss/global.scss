@@ -1,75 +1,72 @@
 @use 'typography';
 @use 'variables';
 @use 'mixins';
+@use 'functions';
 
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible {
-  outline: 2px dotted currentColor !important;
-  outline-offset: 2px;
+:root {
+  --base-color: #{functions.color('midnight-blue')};
+  --primary-color: #{functions.color('green-sea')};
+  --secondary-color: #{functions.color('sun-flower')};
+  --white: #{functions.color('white')};
+  --clouds: #{functions.color('clouds')};
+  --silver: #{functions.color('silver')};
+}
+
+a,
+button,
+input,
+select {
+  &:focus-visible {
+    outline: 2px dotted currentColor !important;
+    outline-offset: 2px;
+  }
 }
 
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: roboto;
+  font-family: Roboto;
 }
 
 h1 {
-  font-family: 'Roboto slab', serif;
+  font-family: variables.$heading-font-family;
   font-weight: 400;
   font-size: clamp(1.5rem, 1.0011rem + 1.3326vw, 3rem);
   margin: 0.5rem 0;
-  color: map-get($map: variables.$colors, $key: 'midnight-blue');
+  color: var(--base-color);
 }
 
 header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include mixins.flex-center;
   width: 100%;
-  background-color: map-get(variables.$colors, 'green-sea');
-  padding: 20px;
+  background-color: var(--primary-color);
+  padding: 1.25rem;
 }
 
 form {
   fieldset {
     display: flex;
-    // flex-direction: column;
-    column-gap: 1rem;
+    column-gap: variables.$base-font-size;
     font-size: 1.2rem;
-    color: map-get(variables.$colors, 'white');
+    color: var(--white);
     border: none;
   }
-  .select {
-    background-color: map-get(variables.$colors, 'white');
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    font-size: 0.9rem;
-    width: 17rem;
-    height: 2.8rem;
-    color: map-get(variables.$colors, 'black-pearl');
-    padding: 12px;
-    border-radius: 5px;
-    border: 1px solid map-get(variables.$colors, 'silver');
-  }
+
   button {
     font-family: 'Passion One';
-    width: 40px;
-    height: 40px;
-    font-size: 40px;
-    border-radius: 7px;
-    background-color: map-get(variables.$colors, 'sun-flower');
-    box-shadow: 1px 1px 2px map-get(variables.$colors, 'clouds');
-    color: map-get(variables.$colors, 'white');
-    transition-duration: 300ms;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 2.5rem;
+    border-radius: 0.44rem;
+    background-color: var(--secondary-color);
+    box-shadow: 1px 1px 2px var(--clouds);
+    color: var(--white);
+    transition: background-color 300ms ease-in-out;
     position: relative;
     &:hover {
-      color: map-get(variables.$colors, 'white');
-      background-color: map-get(variables.$colors, 'midnight-blue');
+      color: var(--white);
+      background-color: var(--base-color);
     }
   }
 }
@@ -77,53 +74,49 @@ form {
 figure {
   position: relative;
   width: 90vw;
-  // @include mixins.mobile-only() {
-  //   width: 350px;
-  // }
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Roboto Slab', serif;
+  font-family: variables.$heading-font-family;
   blockquote {
     font-style: italic;
     font-weight: 300;
     font-size: clamp(1.5rem, 1.3337rem + 0.4442vw, 2rem);
-    margin-bottom: 1rem;
+    margin-bottom: variables.$base-font-size;
   }
   figcaption {
-    font-size: clamp(1rem, 0.8337rem + 0.4442vw, 1.5rem);
+    font-size: clamp(variables.$base-font-size, 0.8337rem + 0.4442vw, 1.5rem);
     font-style: italic;
   }
 }
 
-.caty {
+.category-label {
   position: absolute;
-  left: 20px;
-  bottom: -25px;
+  left: 1.25rem;
+  bottom: -1.5625rem;
   text-transform: capitalize;
-  font-size: 1rem;
-  padding: 5px;
+  font-size: variables.$base-font-size;
+  padding: 0.3125rem;
   color: currentColor;
-  background-color: map-get($map: variables.$colors, $key: 'sun-flower');
-  // opacity: 1;
+  background-color: var(--secondary-color);
   width: auto;
   animation: fadeInAnimation ease 2500ms;
 }
 
 main {
   position: relative;
-  margin: 1rem 0 2rem;
-  padding: 0 20px;
+  margin: variables.$base-font-size 0 2rem;
+  padding: 0 1.25rem;
   display: flex;
   justify-content: center;
 }
 
 .tooltips {
   position: relative; /* making the .tooltip span a container for the tooltip text */
-  transition-duration: 300ms; /* little indicater to indicate it's hoverable */
+  transition: color 300ms ease-in-out; /* little indicater to indicate it's hoverable */
   &:before {
     content: attr(data-text); /* here's the magic */
     position: absolute;
-    font-size: 1rem;
+    font-size: variables.$base-font-size;
     font-family: Roboto;
     /* vertically center */
     top: 50%;
@@ -131,14 +124,14 @@ main {
 
     /* move to right */
     left: 100%;
-    margin-left: 15px; /* and add a small left margin */
+    margin-left: 0.9375rem; /* and add a small left margin */
 
     /* basic styles */
     width: 160px;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: map-get(variables.$colors, 'midnight-blue');
-    color: map-get(variables.$colors, 'white');
+    padding: 0.625rem;
+    border-radius: 0.625rem;
+    background-color: var(--base-color);
+    color: var(--white);
     text-align: center;
     display: none; /* hide by default */
   }
@@ -146,14 +139,14 @@ main {
     content: '';
     // content: open-quote;
     position: absolute;
-    right: -15px;
+    right: -0.9375rem;
     top: 50%;
     transform: translateY(-50%);
     // Triangle right to left
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 10px solid transparent;
-    border-right: 10px solid map-get(variables.$colors, 'midnight-blue');
+    border-top: 0.625rem solid transparent;
+    border-bottom: 0.625rem solid transparent;
+    border-left: 0.625rem solid transparent;
+    border-right: 0.625rem solid var(--base-color);
     display: none;
   }
   &:hover::before,
@@ -167,55 +160,64 @@ main {
   &.left:before {
     /* set new values */
     right: 100%;
-    margin-right: 15px;
+    margin-right: 0.9375rem;
   }
 }
 
 .dropdown {
-  color: map-get(variables.$colors, 'midnight-blue');
-  background-color: map-get($map: variables.$colors, $key: 'white');
-  border-radius: 7px;
-  min-width: 200px;
-  height: 40px;
+  color: var(--base-color);
+  background-color: var(--white);
+  border-radius: 0.4375rem;
+  min-width: 12.5rem;
+  height: 2.5rem;
+  &-item {
+    &:hover {
+      color: var(--white);
+      background-color: var(--primary-color);
+    }
+    &:active {
+      color: var(--base-color);
+      background-color: var(--silver);
+    }
+  }
+  &-menu {
+    width: 100%;
+    max-height: 61.25rem;
+    overflow: scroll;
+  }
 }
 
 .dropdown-toggle {
   width: 100%;
-  height: 40px;
-  padding-right: 20px;
+  height: 2.5rem;
+  padding-right: 1.25rem;
   display: flex;
   position: relative;
-  top: 2px;
+  top: 0.125rem;
   a {
     width: 100%;
-    height: 20px;
+    height: 1.25rem;
   }
   &::after {
-    right: 20px;
+    right: 1.25rem;
     position: absolute;
-    top: 15px;
-    border-top: 0.5em solid map-get(variables.$colors, 'midnight-blue');
+    top: 0.9375rem;
+    border-top: 0.5em solid var(--base-color);
     border-right: 0.4em solid transparent;
     border-bottom: 0;
     border-left: 0.4em solid transparent;
   }
 }
 
-.dropdown-menu {
-  width: 100%;
-  max-height: 620px;
-  overflow: scroll;
-}
-
 .scroller {
   scrollbar-width: thin;
-  scrollbar-color: map-get(variables.$colors, 'green-sea')
-    map-get(variables.$colors, 'clouds');
+  scrollbar-color: var(--primary-color) var(--clouds);
 }
 
 .btn {
+  transition: color 300ms ease-in-out;
   &:hover {
-    color: map-get(variables.$colors, 'midnight-blue');
+    color: var(--base-color);
   }
 }
 
@@ -227,4 +229,9 @@ main {
   100% {
     opacity: 1;
   }
+}
+
+.selected {
+  color: var(--white);
+  background-color: var(--primary-color);
 }

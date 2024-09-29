@@ -1,0 +1,7 @@
+@function color($name) {
+  @return map-get(variables.$colors, $name);
+}
+
+:root {
+  --primary-color: #{color('green-sea')};
+}
