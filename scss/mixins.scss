@@ -1,71 +1,88 @@
-@use "sass:map";
-@use "variables";
+@use 'sass:map';
+@use 'variables';
 
-@mixin breakpoint($point, $direction: "up") {
-  $value: map-get(variables.$breakpoints, "#{$point}-#{$direction}");
-  
-  @if $direction == "up" {
+@mixin breakpoint($point, $direction: 'up') {
+  $value: map-get(variables.$breakpoints, '#{$point}-#{$direction}');
+
+  @if $direction == 'up' {
     @media (min-width: $value) {
       @content;
     }
-  } @else if $direction == "down" {
+  } @else if $direction == 'down' {
     @media (max-width: $value) {
       @content;
     }
-  } @else if $direction == "only" {
-    $min: map-get(variables.$breakpoints, "#{$point}-up");
-    $max: map-get(variables.$breakpoints, "#{$point}-down");
+  } @else if $direction == 'only' {
+    $min: map-get(variables.$breakpoints, '#{$point}-up');
+    $max: map-get(variables.$breakpoints, '#{$point}-down');
     @media (min-width: $min) and (max-width: $max) {
       @content;
     }
   }
 }
 
-@mixin mobile-only {
-  @media (max-width: map-get(variables.$breakpoints, "mobile-only")) {
+@mixin mobile-down {
+  @include breakpoint('mobile', 'down') {
     @content;
   }
 }
 
 @mixin tablet-portrait-up {
-  @include breakpoint("tablet-portrait", "up") {
+  @include breakpoint('tablet-portrait', 'up') {
     @content;
   }
 }
 
-@mixin desktop-down {
-  @include breakpoint("desktop", "down") {
+@mixin tablet-portrait-down {
+  @include breakpoint('tablet-portrait', 'down') {
     @content;
   }
 }
 
 @mixin tablet-portrait-only {
-  @media (min-width: map-get(variables.$breakpoints, "tablet-portrait-up")) and (max-width: map-get(variables.$breakpoints, "tablet-portrait-down")) {
+  @include breakpoint('tablet-portrait', 'only') {
     @content;
   }
 }
+
 @mixin tablet-landscape-up {
-  @media (min-width: map-get(variables.$breakpoints, "tablet-landscape-up")) {
+  @include breakpoint('tablet-landscape', 'up') {
     @content;
   }
 }
+
+@mixin tablet-landscape-down {
+  @include breakpoint('tablet-landscape', 'down') {
+    @content;
+  }
+}
+
 @mixin tablet-landscape-only {
-  @media (min-width: map-get(variables.$breakpoints, "tablet-landscape-up")) and (max-width: map-get(variables.$breakpoints, "tablet-landscape-down")) {
+  @include breakpoint('tablet-landscape', 'only') {
     @content;
   }
 }
+
 @mixin desktop-up {
-  @media (min-width: map-get(variables.$breakpoints, "desktop-up")) {
+  @include breakpoint('desktop', 'up') {
     @content;
   }
 }
+
+@mixin desktop-down {
+  @include breakpoint('desktop', 'down') {
+    @content;
+  }
+}
+
 @mixin desktop-only {
-  @media (min-width: map-get(variables.$breakpoints, "desktop-up")) and (max-width: map-get(variables.$breakpoints, "desktop-down")) {
+  @include breakpoint('desktop', 'only') {
     @content;
   }
 }
+
 @mixin big-desktop-up {
-  @media (min-width: map-get(variables.$breakpoints, "big-desktop-up")) {
+  @include breakpoint('big-desktop', 'up') {
     @content;
   }
 }

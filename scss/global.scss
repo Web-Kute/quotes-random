@@ -152,7 +152,7 @@ main {
   &:hover::before,
   &:hover::after {
     display: block;
-    @include mixins.mobile-only {
+    @include mixins.mobile-down {
       display: none;
     }
   }

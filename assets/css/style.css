@@ -302,7 +302,6 @@ main {
   background-color: var(--base-color);
   color: var(--white);
   text-align: center;
-  transition-duration: 300ms ease-in-out;
   display: none; /* hide by default */
 }
 .tooltips::after {
@@ -315,7 +314,6 @@ main {
   border-bottom: 0.625rem solid transparent;
   border-left: 0.625rem solid transparent;
   border-right: 0.625rem solid var(--base-color);
-  transition-duration: 300ms ease-in-out;
   display: none;
 }
 .tooltips:hover::before, .tooltips:hover::after {
