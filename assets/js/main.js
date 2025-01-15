@@ -14,16 +14,13 @@ const userError = document.querySelector('.user-error');
 const MESSAGE_TEXT_ERROR =
   "L'ignorance est une feuille blanche sur laquelle on peut écrire, mais l'erreur est une feuille griffonnée qu'il faut d'abord effacer. Nous finissons par apprendre qu'il ne sert à rien de trop s'affliger de nos erreurs.";
 
-// const nextBtn = document.querySelector('.next-btn');
-// const prevBtn = document.querySelector('.prev-btn');
-
 const capitalizedList = categoryList.map(
   (word) => word.charAt(0).toUpperCase() + word.slice(1),
 );
-
-async function fetchApiQuotes(category = capitalizedList[catIndex]) {
+// version premium: fetchApiQuotes(category = capitalizedList[catIndex])
+async function fetchApiQuotes() {
   showSpinner();
-  const response = await fetch(`${auth.url}?category=${category}`, options);
+  const response = await fetch(`${auth.url}`, options);
 
   if (!response.ok) {
     const message = `An error has occured: ${response.status}`;
@@ -83,13 +80,3 @@ submit.addEventListener('click', (e) => {
 
   fetchAndDisplayQuote(category);
 });
-
-// nextBtn.addEventListener('click', () => {
-//   catIndex = (catIndex + 1) % categoryList.length;
-//   fetchAndDisplayQuote(categoryList[catIndex]);
-// });
-
-// prevBtn.addEventListener('click', () => {
-//   catIndex = (catIndex - 1 + categoryList.length) % categoryList.length;
-//   fetchAndDisplayQuote(categoryList[catIndex]);
-// });
