@@ -5,7 +5,7 @@ export const auth = {
 
 export const options = {
   method: 'GET',
-  headers: { 'x-api-key': auth.key },
+  headers: { 'X-Api-Key': auth.key },
   url: auth.url,
   accept: 'application/json',
 };
